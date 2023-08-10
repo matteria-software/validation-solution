@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>Validation Solution</name>
-  <url>http://maven.apache.org</url>
+  <url>http://matteria-software.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
