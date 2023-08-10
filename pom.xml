@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.matteriasoftware</groupId>
-  <artifactId>validation</artifactId>
+  <artifactId>validation-solution</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
