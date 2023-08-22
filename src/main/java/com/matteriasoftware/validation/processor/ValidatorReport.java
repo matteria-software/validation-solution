@@ -1,20 +1,21 @@
-package com.matteriasoftware.validation;
+package com.matteriasoftware.validation.processor;
 
+import com.matteriasoftware.validation.report.ValidationStatus;
 import com.matteriasoftware.validation.metainfo.ValidationMetaInfo;
 
 import java.util.List;
 import java.util.function.Consumer;
 
-public class ValidationReport {
+public class ValidatorReport {
     private final ValidationStatus generalValidationStatus;
     private final String generalMessage;
     private final long totalTime;
     private final List<ValidationMetaInfo> validationMetaInfos;
 
-    private ValidationReport(final List<ValidationMetaInfo> validationMetaInfos,
-                                final long totalTime,
-                                final ValidationStatus generalValidationStatus,
-                                String generalMessage) {
+    private ValidatorReport(final List<ValidationMetaInfo> validationMetaInfos,
+                            final long totalTime,
+                            final ValidationStatus generalValidationStatus,
+                            String generalMessage) {
         this.validationMetaInfos = validationMetaInfos;
         this.totalTime = totalTime;
         this.generalValidationStatus = generalValidationStatus;
@@ -55,13 +56,13 @@ public class ValidationReport {
         public String generalMessage;
         public ValidationStatus generalValidationStatus;
 
-        public ValidationReportBuilder with(final Consumer<ValidationReport.ValidationReportBuilder> builderFunction) {
+        public ValidationReportBuilder with(final Consumer<ValidatorReport.ValidationReportBuilder> builderFunction) {
             builderFunction.accept(this);
             return this;
         }
 
-        public ValidationReport build() {
-            return new ValidationReport(validationMetaInfos, totalTime, generalValidationStatus, generalMessage);
+        public ValidatorReport build() {
+            return new ValidatorReport(validationMetaInfos, totalTime, generalValidationStatus, generalMessage);
         }
     }
 }

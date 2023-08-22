@@ -1,7 +1,7 @@
 package com.matteriasoftware.validation.metainfo;
 
-import com.matteriasoftware.validation.ValidationStatus;
-import com.matteriasoftware.validation.exception.GeneralValidationException;
+import com.matteriasoftware.validation.report.ValidationStatus;
+import com.matteriasoftware.validation.exception.ValidationConfigurationException;
 
 import java.util.Optional;
 
@@ -9,9 +9,9 @@ public class ValidationMetaInfo {
     private final String name;
     private final ValidationStatus status;
     private final long time;
-    private final GeneralValidationException validationException;
+    private final ValidationConfigurationException validationException;
 
-    public ValidationMetaInfo(ValidationStatus status, long time, String name, GeneralValidationException validationException) {
+    public ValidationMetaInfo(ValidationStatus status, long time, String name, ValidationConfigurationException validationException) {
         this.status = status;
         this.time = time;
         this.name = name;
@@ -30,7 +30,7 @@ public class ValidationMetaInfo {
         return this.name;
     }
 
-    public Optional<GeneralValidationException> getValidationException() {
+    public Optional<ValidationConfigurationException> getValidationException() {
         if (validationException == null) {
             return Optional.empty();
         }

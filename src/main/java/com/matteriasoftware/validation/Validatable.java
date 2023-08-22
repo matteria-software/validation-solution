@@ -1,9 +1,7 @@
 package com.matteriasoftware.validation;
 
-import com.matteriasoftware.validation.ValidationConfig;
-import com.matteriasoftware.validation.exception.GeneralValidationException;
-
+/* Single basic unit that must check only one exception */
 @FunctionalInterface
 public interface Validatable {
-    void run(final ValidationConfig config) throws GeneralValidationException;
+    void run() throws Exception;
 }
